@@ -1,0 +1,14 @@
+{
+  "name": "project",
+  "version": "0.0.0",
+  "dependencies": {
+    "html5-boilerplate": "",
+    "jquery": "",
+    "underscore": "",
+    "backbone": "",
+    "modernizr": "",
+    "normalize.css": "",
+    "requirejs": "",
+    "requirejs-domready": ""
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "dependencies": {
+    "grunt-contrib-compass": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-requirejs": "",
+    "grunt-contrib-watch": "",
+    "connect": "2.x.x"
+  }
+}
