@@ -1,1 +1,25 @@
 @import 'libs';
+
+.app {
+	width: 660px;
+	margin: auto;
+}
+
+.app-header {
+	text-align: center;
+	color: rgb(246, 102, 76);
+	border-bottom: 1px solid rgb(217, 217, 217);
+}
+
+.taster {
+	text-align: center;
+	margin-left: 9px;
+	margin-right: 9px;
+	border: 1px solid rgb(165, 165, 165);
+	border-radius: .5em;
+}
+
+.taster-thumbnail {
+	border-top-left-radius: .4em;
+	border-top-right-radius: .4em;
+}
