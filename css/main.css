@@ -2988,21 +2988,21 @@ th {
   margin: 15px 20px;
 }
 
-/* line 28, ../scss/main.scss */
+/* line 29, ../scss/main.scss */
 .taster-names {
   color: #515151;
 }
-/* line 31, ../scss/main.scss */
+/* line 32, ../scss/main.scss */
 .taster-names h2 {
   font-weight: normal;
   margin: 0 0 5px;
 }
-/* line 36, ../scss/main.scss */
+/* line 37, ../scss/main.scss */
 .taster-names p {
   margin: 0;
 }
 
-/* line 40, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 .taster-stats {
   display: -webkit-box;
   display: -moz-box;
@@ -3017,8 +3017,49 @@ th {
   align-items: center;
   color: #cfcfcf;
 }
-/* line 45, ../scss/main.scss */
+/* line 47, ../scss/main.scss */
 .taster-stats i {
   margin-left: 15px;
   margin-right: 5px;
+}
+
+/* line 53, ../scss/main.scss */
+.rate {
+  margin-top: 25px;
+  position: relative;
+}
+
+/* line 58, ../scss/main.scss */
+.rate-button-bg {
+  background-color: #f1f1f1;
+  border-top: 1px inset rgba(255, 255, 255, 0.13);
+  cursor: pointer;
+  border-radius: 5em;
+  padding: 15px;
+  position: absolute;
+}
+
+/* line 67, ../scss/main.scss */
+.rate-button {
+  background-color: white;
+  border-radius: 4em;
+  padding: 30px;
+  border-bottom: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  text-align: center;
+  width: 108px;
+}
+
+/* line 77, ../scss/main.scss */
+.rate-nope {
+  color: #ff7258;
+  right: 50%;
+  margin-right: 20px;
+}
+
+/* line 83, ../scss/main.scss */
+.rate-like {
+  color: #63de9a;
+  left: 50%;
+  margin-left: 20px;
 }

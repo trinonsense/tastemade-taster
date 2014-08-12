@@ -25,6 +25,7 @@
 	@include align-items(center);
 	margin: 15px 20px
 }
+
 .taster-names {
 	color: rgb(81, 81, 81);
 
@@ -37,6 +38,7 @@
 		margin: 0;
 	}
 }
+
 .taster-stats {
 	@include flexbox;
 	@include align-items(center);
@@ -46,4 +48,40 @@
 		margin-left: 15px;
 		margin-right: 5px
 	}
+}
+
+.rate {
+	margin-top: 25px;
+	position: relative;
+}
+
+.rate-button-bg {
+	background-color: rgb(241, 241, 241);
+	border-top: 1px inset rgba(255, 255, 255, 0.13);
+	cursor: pointer;
+	border-radius: 5em;
+	padding: 15px;
+	position: absolute;
+}
+
+.rate-button {
+	background-color: white;
+	border-radius: 4em;
+	padding: 30px;
+	border-bottom: 1px solid rgb(214, 214, 214);
+	box-sizing: border-box;
+	text-align: center;
+	width: 108px;
+}
+
+.rate-nope {
+	color: rgb(255, 114, 88);
+	right: 50%;
+	margin-right: 20px;
+}
+
+.rate-like {
+	color: rgb(99, 222, 154);
+	left: 50%;
+	margin-left: 20px;
 }
