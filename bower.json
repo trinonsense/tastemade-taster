@@ -9,6 +9,7 @@
     "modernizr": "",
     "normalize.css": "",
     "requirejs": "",
-    "requirejs-domready": ""
+    "requirejs-domready": "",
+    "fontawesome": ""
   }
 }
