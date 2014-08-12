@@ -1,13 +1,7 @@
 define([
-	'underscore',
-	'backbone',
-	'app',
-	'helpers',
+	'backbone', 'tasters', 'app'
 ], function(
-	_,
-	Backbone,
-	app,
-	Helpers
+	Backbone, Tasters, app
 ) {
 
 	var Router = Backbone.Router.extend({
@@ -19,7 +13,21 @@ define([
 		// Route Handlers
 		//
 		index: function() {
+			if ('geolocation' in navigator) {
+				navigator.geolocation.getCurrentPosition(
+					function(pos) { // success
+						app.tasters.fetch({
+							data : {
+								lat: pos.coords.latitude,
+								long: pos.coords.longitude
+							}
+						});
 
+					}, function(err) { // error
+						console.log(err.message);
+
+					}, {timeout: 5000})
+			}
 		}
 	});
 
