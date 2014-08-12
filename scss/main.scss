@@ -12,14 +12,38 @@
 }
 
 .taster {
-	text-align: center;
-	margin-left: 9px;
-	margin-right: 9px;
+	width: 640px;
+	margin: 10px auto;
 	border: 1px solid rgb(165, 165, 165);
 	border-radius: .5em;
+	overflow: hidden;
 }
 
-.taster-thumbnail {
-	border-top-left-radius: .4em;
-	border-top-right-radius: .4em;
+.taster-info {
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
+	margin: 15px 20px
+}
+.taster-names {
+	color: rgb(81, 81, 81);
+
+	h2 {
+		font-weight: normal;
+		margin: 0 0 5px;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+.taster-stats {
+	@include flexbox;
+	@include align-items(center);
+	color: rgb(207,207, 207);
+
+	i {
+		margin-left: 15px;
+		margin-right: 5px
+	}
 }
