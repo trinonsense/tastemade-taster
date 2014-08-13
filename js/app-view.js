@@ -18,7 +18,10 @@ define([
 		initialize: function() {
 			this.collection.on('sync', this.render, this);
 			this.templates = {
-				taster: _.template(this.getTemplate('taster-template'))
+				taster: this.getTemplate('taster-template')
+			};
+			this.layouts = {
+				rate: this.getTemplate('rate-layout')
 			};
 		},
 
@@ -35,14 +38,14 @@ define([
 		},
 
 		render: function(tasters) {
-			var taster = tasters.at(0);
-			console.log(this.templates.taster(taster.toJSON()));
-			debugger;
+			var taster = this.templates.taster(tasters.at(0).toJSON());
+			var content = this.layouts.rate({content: taster});
 
+			this.$('.app-content').html(content);
 		},
 
 		getTemplate: function(template) {
-			return $('#' + template).html();
+			return _.template($('#' + template).html());
 		}
 	});
 
