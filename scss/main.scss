@@ -140,6 +140,7 @@
 }
 
 .rate-button {
+	@include transition(background-color 100ms);
 	background-color: white;
 	border-radius: 4em;
 	padding: 30px;
@@ -147,6 +148,14 @@
 	box-sizing: border-box;
 	text-align: center;
 	width: 108px;
+
+	&:hover {
+		background-color: darken(#fff, 2%);
+	}
+
+	&:active {
+		background-color: darken(#fff, 4%);
+	}
 }
 
 .rate-nope {

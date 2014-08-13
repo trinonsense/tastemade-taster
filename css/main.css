@@ -3112,6 +3112,10 @@ th {
 
 /* line 142, ../scss/main.scss */
 .rate-button {
+  -webkit-transition: background-color 100ms;
+  -moz-transition: background-color 100ms;
+  -o-transition: background-color 100ms;
+  transition: background-color 100ms;
   background-color: white;
   border-radius: 4em;
   padding: 30px;
@@ -3120,15 +3124,23 @@ th {
   text-align: center;
   width: 108px;
 }
-
 /* line 152, ../scss/main.scss */
+.rate-button:hover {
+  background-color: #fafafa;
+}
+/* line 156, ../scss/main.scss */
+.rate-button:active {
+  background-color: whitesmoke;
+}
+
+/* line 161, ../scss/main.scss */
 .rate-nope {
   color: #ff7258;
   right: 50%;
   margin-right: 20px;
 }
 
-/* line 158, ../scss/main.scss */
+/* line 167, ../scss/main.scss */
 .rate-like {
   color: #63de9a;
   left: 50%;
