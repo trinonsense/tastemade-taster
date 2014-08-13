@@ -21,7 +21,12 @@
   </div>
 
   <template id="rate-layout">
-    {{content}}
+
+    <ul class="tasters">
+      {{content}}
+      {{content}}
+      {{content}}
+    </ul>
     <div class="rate">
         <div class="rate-button-bg rate-nope">
           <div class="rate-button">
@@ -37,9 +42,9 @@
   </template>
 
   <template id="taster-template">
-    <section class="taster">
+    <li class="taster">
       <div class="taster-video-player">
-        <video class="taster-video" src="{{video.url}}" poster="{{thumbnail.url}}" width="640" height="360"></video>
+        <video class="taster-video" src="{{video.url}}" poster="{{thumbnail.url}}" preload=none></video>
         <i class="taster-video-control fa fa-5x fa-play-circle-o"></i>
       </div>
       <div class="taster-info">
@@ -53,7 +58,7 @@
           <i class="fa fa-eye fa-2x"></i> {{stats.views}}
         </div>
       </div>
-    </section>
+    </li>
   </template>
 
   <script data-main="js/require-config" src="bower_components/requirejs/require.js"></script>

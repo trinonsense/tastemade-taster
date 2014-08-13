@@ -2959,14 +2959,50 @@ th {
 }
 
 /* line 14, ../scss/main.scss */
+.tasters {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 19, ../scss/main.scss */
 .taster {
   width: 640px;
   margin: 10px auto;
   border: 1px solid #a5a5a5;
   border-radius: .5em;
+  list-style: none;
+  background-color: white;
+  position: relative;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+}
+/* line 29, ../scss/main.scss */
+.taster:first-child {
+  z-index: 3;
+}
+/* line 33, ../scss/main.scss */
+.taster:nth-child(2) {
+  width: 630px;
+  margin-top: -85px;
+  z-index: 2;
+}
+/* line 40, ../scss/main.scss */
+.taster:nth-child(2) .taster-video {
+  display: none;
+  width: 630px;
+}
+/* line 46, ../scss/main.scss */
+.taster:nth-child(3) {
+  width: 620px;
+  margin-top: -85px;
+  z-index: 1;
+}
+/* line 53, ../scss/main.scss */
+.taster:nth-child(3) .taster-video {
+  display: none;
+  width: 620px;
 }
 
-/* line 21, ../scss/main.scss */
+/* line 60, ../scss/main.scss */
 .taster-info {
   display: -webkit-box;
   display: -moz-box;
@@ -2987,21 +3023,21 @@ th {
   margin: 15px 20px;
 }
 
-/* line 28, ../scss/main.scss */
+/* line 67, ../scss/main.scss */
 .taster-names {
   color: #515151;
 }
-/* line 31, ../scss/main.scss */
+/* line 70, ../scss/main.scss */
 .taster-names h2 {
   font-weight: normal;
   margin: 0 0 5px;
 }
-/* line 36, ../scss/main.scss */
+/* line 75, ../scss/main.scss */
 .taster-names p {
   margin: 0;
 }
 
-/* line 41, ../scss/main.scss */
+/* line 80, ../scss/main.scss */
 .taster-stats {
   display: -webkit-box;
   display: -moz-box;
@@ -3016,29 +3052,29 @@ th {
   align-items: center;
   color: #cfcfcf;
 }
-/* line 46, ../scss/main.scss */
+/* line 85, ../scss/main.scss */
 .taster-stats i {
   margin-left: 15px;
   margin-right: 5px;
 }
 
-/* line 52, ../scss/main.scss */
+/* line 91, ../scss/main.scss */
 .taster-video-player {
   position: relative;
   cursor: pointer;
 }
-/* line 60, ../scss/main.scss */
+/* line 99, ../scss/main.scss */
 .taster-video-player:hover .taster-video-control {
   display: inherit;
 }
-/* line 64, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 .taster-video-player:active .taster-video-control {
   font-size: 4em;
   margin-top: -32px;
   margin-left: -27.5px;
 }
 
-/* line 71, ../scss/main.scss */
+/* line 110, ../scss/main.scss */
 .taster-video-control {
   display: none;
   position: absolute;
@@ -3050,19 +3086,21 @@ th {
   color: white;
 }
 
-/* line 82, ../scss/main.scss */
+/* line 121, ../scss/main.scss */
 .taster-video {
   border-top-left-radius: .4em;
   border-top-right-radius: .4em;
+  width: 640px;
+  height: 360px;
 }
 
-/* line 87, ../scss/main.scss */
+/* line 128, ../scss/main.scss */
 .rate {
   margin-top: 25px;
   position: relative;
 }
 
-/* line 92, ../scss/main.scss */
+/* line 133, ../scss/main.scss */
 .rate-button-bg {
   background-color: #f1f1f1;
   border-top: 1px inset rgba(255, 255, 255, 0.13);
@@ -3072,7 +3110,7 @@ th {
   position: absolute;
 }
 
-/* line 101, ../scss/main.scss */
+/* line 142, ../scss/main.scss */
 .rate-button {
   background-color: white;
   border-radius: 4em;
@@ -3083,14 +3121,14 @@ th {
   width: 108px;
 }
 
-/* line 111, ../scss/main.scss */
+/* line 152, ../scss/main.scss */
 .rate-nope {
   color: #ff7258;
   right: 50%;
   margin-right: 20px;
 }
 
-/* line 117, ../scss/main.scss */
+/* line 158, ../scss/main.scss */
 .rate-like {
   color: #63de9a;
   left: 50%;
