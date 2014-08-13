@@ -9,7 +9,7 @@ define([
 	};
 
 	var AppView = Backbone.View.extend({
-		el: '.app',
+		el: '.app-content',
 
 		events: {
 			'click .taster-video-player' : 'playPause'
@@ -38,10 +38,15 @@ define([
 		},
 
 		render: function(tasters) {
-			var taster = this.templates.taster(tasters.at(0).toJSON());
-			var content = this.layouts.rate({content: taster});
+			var content, tastersHTML = '';
 
-			this.$('.app-content').html(content);
+			for (var i = 0; i < 3; i++) {
+				tastersHTML += this.templates.taster(tasters.at(i).toJSON());
+			}
+
+			content = this.layouts.rate({tasters: tastersHTML});
+
+			this.$el.html(content);
 		},
 
 		getTemplate: function(template) {
