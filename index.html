@@ -49,6 +49,27 @@
       </div>
     </main>
   </div>
+
+  <template id="taster-template">
+    <section class="taster">
+      <div class="taster-video-player">
+        <video class="taster-video" src="{{video.url}}" poster="{{thumbnail.url}}" width="640" height="360"></video>
+        <i class="taster-video-control fa fa-5x fa-play-circle-o"></i>
+      </div>
+      <div class="taster-info">
+        <header class="taster-names">
+          <h2>{{venue.name}}</h2>
+          <p>{{creator.name}}</p>
+        </header>
+        <div class="taster-stats">
+          <i class="fa fa-thumbs-o-up fa-2x"></i> {{stats.likers}}
+          <i class="fa fa-comment-o fa-2x"></i> {{stats.comments}}
+          <i class="fa fa-eye fa-2x"></i> {{stats.views}}
+        </div>
+      </div>
+    </section>
+  </template>
+
   <script data-main="js/require-config" src="bower_components/requirejs/require.js"></script>
 </body>
 </html>

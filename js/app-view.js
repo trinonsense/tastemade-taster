@@ -1,8 +1,12 @@
 define([
-	'backbone'
+	'backbone', 'underscore', 'jquery'
 ], function(
-	Backbone
+	Backbone, _, $
 ) {
+
+	_.templateSettings = {
+		interpolate: /\{\{(.+?)\}\}/g
+	};
 
 	var AppView = Backbone.View.extend({
 		el: '.app',
@@ -13,6 +17,9 @@ define([
 
 		initialize: function() {
 			this.collection.on('sync', this.render, this);
+			this.templates = {
+				taster: _.template(this.getTemplate('taster-template'))
+			};
 		},
 
 		playPause: function() {
@@ -29,17 +36,13 @@ define([
 
 		render: function(tasters) {
 			var taster = tasters.at(0);
+			console.log(this.templates.taster(taster.toJSON()));
+			debugger;
 
-			this.$('.taster')
-				.find('.data-venue').text(taster.get('venue').name).end()
-				.find('.data-user').text(taster.get('creator').name).end()
-				.find('.data-likers').text(taster.get('stats').likers).end()
-				.find('.data-comments').text(taster.get('stats').comments).end()
-				.find('.data-views').text(taster.get('stats').views).end()
-				.find('.data-video').attr({
-					poster: taster.get('thumbnail').url,
-					src: taster.get('video').url
-				});
+		},
+
+		getTemplate: function(template) {
+			return $('#' + template).html();
 		}
 	});
 
