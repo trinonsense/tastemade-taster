@@ -31,7 +31,18 @@
 }
 
 .taster {
-	@include transition(width 500ms, margin 500ms, top 500ms);
+	@include transition(
+		// pull up next tasters
+		width 200ms,
+		margin 200ms,
+		top 200ms,
+
+		// taster rated
+		transform 500ms ease 200ms,
+		left 500ms ease 200ms,
+		opacity 400ms ease 200ms
+	);
+
 	border: 1px solid rgb(165, 165, 165);
 	border-radius: .5em;
 	list-style: none;
@@ -82,6 +93,18 @@
 	&:nth-child(n+5) {
 		display: none;
 	}
+}
+
+.taster-liked {
+	@include transform(rotate(90deg));
+	left: 150%;
+	opacity: 0;
+}
+
+.taster-noped {
+	@include transform(rotate(-90deg));
+	left: -50%;
+	opacity: 0;
 }
 
 .taster-info {

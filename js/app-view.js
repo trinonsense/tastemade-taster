@@ -13,7 +13,8 @@ define([
 
 		events: {
 			'click .taster-video-player' : 'playPause',
-			'click .rate-button-bg' : 'rate'
+			'click .rate-button-bg' : 'rateTaster',
+			'transitionend .taster:first-child' : 'removeTaster'
 		},
 
 		initialize: function() {
@@ -38,13 +39,22 @@ define([
 			this.$('.taster-video-player').toggleClass('is-paused');
 		},
 
-		rate: function(e) {
-			// this.$('.taster').first().remove();
+		rateTaster: function(e) {
+			var $currentTaster = this.$('.taster:first-child');
+
 			if ($(e.currentTarget).hasClass('rate-like')) {
-				this.$('.taster:first-child .taster-like').css('opacity', 1);
+				$currentTaster.addClass('taster-liked')
+					.find('.taster-like').css('opacity', 1).end();
 
 			} else {
-				this.$('.taster:first-child .taster-nope').css('opacity', 1);
+				$currentTaster.addClass('taster-noped')
+					.find('.taster-nope').css('opacity', 1);
+			}
+		},
+
+		removeTaster: function(e) {
+			if (e.originalEvent.propertyName === 'transform') {
+				this.$('.taster:first-child').remove();
 			}
 		},
 
