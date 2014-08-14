@@ -28,7 +28,7 @@ define([
 		},
 
 		playPause: function() {
-			var video = this.$('.taster-video')[0];
+			var video = this.getCurrentTaster().find('.taster-video')[0];
 
 			if (video.paused) {
 				video.play();
@@ -36,25 +36,23 @@ define([
 				video.pause();
 			}
 
-			this.$('.taster-video-player').toggleClass('is-paused');
+			this.getCurrentTaster().find('.taster-video-player').toggleClass('is-paused');
 		},
 
 		rateTaster: function(e) {
-			var $currentTaster = this.$('.taster:first-child');
-
 			if ($(e.currentTarget).hasClass('rate-like')) {
-				$currentTaster.addClass('taster-liked')
+				this.getCurrentTaster().addClass('taster-liked')
 					.find('.taster-like').css('opacity', 1).end();
 
 			} else {
-				$currentTaster.addClass('taster-noped')
+				this.getCurrentTaster().addClass('taster-noped')
 					.find('.taster-nope').css('opacity', 1);
 			}
 		},
 
 		removeTaster: function(e) {
 			if (e.originalEvent.propertyName === 'transform') {
-				this.$('.taster:first-child').remove();
+				this.getCurrentTaster().remove();
 			}
 		},
 
@@ -69,6 +67,10 @@ define([
 			content = this.layouts.rate({tasters: tastersHTML});
 
 			this.$el.html(content);
+		},
+
+		getCurrentTaster: function() {
+			return this.$('.taster:first-child');
 		},
 
 		getTemplate: function(template) {
