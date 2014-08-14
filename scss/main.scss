@@ -6,9 +6,15 @@
 }
 
 .app-header {
+	font-family: 'Lobster', cursive;
 	text-align: center;
 	color: rgb(246, 102, 76);
 	border-bottom: 1px solid rgb(217, 217, 217);
+
+	h1 {
+		margin: 5px 0;
+		font-size: 3em;
+	}
 }
 
 .tasters {

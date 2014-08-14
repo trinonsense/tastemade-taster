@@ -12,7 +12,7 @@ define([
 		el: '.app-content',
 
 		events: {
-			'click .taster-video-player' : 'playPause',
+			'click .taster-video-player' : 'toggleVideo',
 			'click .rate-button-bg' : 'rateTaster',
 			'transitionend .taster:first-child' : 'removeTaster'
 		},
@@ -27,7 +27,7 @@ define([
 			};
 		},
 
-		playPause: function() {
+		toggleVideo: function() {
 			var video = this.getCurrentTaster().find('.taster-video')[0];
 
 			if (video.paused) {
