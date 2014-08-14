@@ -18,7 +18,6 @@
 	height: 477px;
 }
 
-
 .taster-bottom {
 	$width: 620px;
 
@@ -151,6 +150,39 @@
 	border-top-right-radius: .4em;
 	width: 640px;
 	height: 360px;
+}
+
+%taster-rate {
+	@include transition(opacity 100ms);
+	position: absolute;
+	top: 37px;
+	font-weight: bold;
+	font-size: 4em;
+	border: 8px solid;
+	border-radius: .1em;
+	padding: 10px;
+	margin: 0;
+	opacity: 0;
+}
+
+.taster-like {
+	@extend %taster-rate;
+	$color: rgba(0, 164, 111, .9);
+
+	@include transform(rotate(-16deg));
+	left: 23px;
+	color: $color;
+	border-color: $color;
+}
+
+.taster-nope {
+	@extend %taster-rate;
+	$color: rgba(255, 99, 82, .9);
+
+	right: 23px;
+	@include transform(rotate(16deg));
+	color: $color;
+	border-color: $color;
 }
 
 .rate {

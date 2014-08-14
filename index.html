@@ -25,17 +25,17 @@
       {{tasters}}
     </ul>
     <div class="rate">
-        <div class="rate-button-bg rate-nope">
-          <div class="rate-button">
-            <i class="fa fa-times fa-3x"></i>
-          </div>
-        </div>
-        <div class="rate-button-bg rate-like">
-          <div class="rate-button">
-            <i class="fa fa-heart fa-3x"></i>
-          </div>
+      <div class="rate-button-bg rate-nope">
+        <div class="rate-button">
+          <i class="fa fa-times fa-3x"></i>
         </div>
       </div>
+      <div class="rate-button-bg rate-like">
+        <div class="rate-button">
+          <i class="fa fa-heart fa-3x"></i>
+        </div>
+      </div>
+    </div>
   </template>
 
   <template id="taster-template">
@@ -43,6 +43,8 @@
       <div class="taster-video-player">
         <video class="taster-video" src="{{video.url}}" poster="{{thumbnail.url}}" preload=none></video>
         <i class="taster-video-control fa fa-5x fa-play-circle-o"></i>
+        <p class="taster-like">LIKE</p>
+        <p class="taster-nope">NOPE</p>
       </div>
       <div class="taster-info">
         <header class="taster-names">

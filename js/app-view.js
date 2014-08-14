@@ -13,7 +13,7 @@ define([
 
 		events: {
 			'click .taster-video-player' : 'playPause',
-			'click .rate-button' : 'rate'
+			'click .rate-button-bg' : 'rate'
 		},
 
 		initialize: function() {
@@ -38,8 +38,14 @@ define([
 			this.$('.taster-video-player').toggleClass('is-paused');
 		},
 
-		rate: function() {
-			this.$('.taster').first().remove();
+		rate: function(e) {
+			// this.$('.taster').first().remove();
+			if ($(e.currentTarget).hasClass('rate-like')) {
+				this.$('.taster:first-child .taster-like').css('opacity', 1);
+
+			} else {
+				this.$('.taster:first-child .taster-nope').css('opacity', 1);
+			}
 		},
 
 		render: function(tasters) {
