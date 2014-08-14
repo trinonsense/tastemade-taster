@@ -2960,49 +2960,76 @@ th {
 
 /* line 14, ../scss/main.scss */
 .tasters {
-  margin: 0;
+  margin: 10px 0 0;
   padding: 0;
+  position: relative;
+  height: 477px;
 }
 
-/* line 19, ../scss/main.scss */
+/* line 22, ../scss/main.scss */
+.taster-bottom, .taster:nth-child(3), .taster:nth-child(4) {
+  width: 620px;
+  margin-left: -310px;
+  top: 20px;
+}
+/* line 29, ../scss/main.scss */
+.taster-bottom .taster-video, .taster:nth-child(3) .taster-video, .taster:nth-child(4) .taster-video {
+  width: 620px;
+}
+
+/* line 34, ../scss/main.scss */
 .taster {
-  width: 640px;
-  margin: 10px auto;
+  -webkit-transition: width 500ms, margin 500ms, top 500ms;
+  -moz-transition: width 500ms, margin 500ms, top 500ms;
+  -o-transition: width 500ms, margin 500ms, top 500ms;
+  transition: width 500ms, margin 500ms, top 500ms;
   border: 1px solid #a5a5a5;
   border-radius: .5em;
   list-style: none;
   background-color: white;
-  position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 50%;
 }
-/* line 29, ../scss/main.scss */
+/* line 44, ../scss/main.scss */
+.taster .taster-video {
+  -webkit-transition: width 500ms;
+  -moz-transition: width 500ms;
+  -o-transition: width 500ms;
+  transition: width 500ms;
+}
+/* line 48, ../scss/main.scss */
 .taster:first-child {
+  width: 640px;
+  margin-left: -320px;
+  top: 0;
   z-index: 3;
 }
-/* line 33, ../scss/main.scss */
+/* line 56, ../scss/main.scss */
+.taster:first-child .taster-video {
+  width: 640px;
+}
+/* line 61, ../scss/main.scss */
 .taster:nth-child(2) {
+  margin-left: -315px;
   width: 630px;
-  margin-top: -85px;
+  top: 10px;
   z-index: 2;
 }
-/* line 40, ../scss/main.scss */
+/* line 69, ../scss/main.scss */
 .taster:nth-child(2) .taster-video {
-  display: none;
   width: 630px;
 }
-/* line 46, ../scss/main.scss */
+/* line 74, ../scss/main.scss */
 .taster:nth-child(3) {
-  width: 620px;
-  margin-top: -85px;
   z-index: 1;
 }
-/* line 53, ../scss/main.scss */
-.taster:nth-child(3) .taster-video {
+/* line 83, ../scss/main.scss */
+.taster:nth-child(n+5) {
   display: none;
-  width: 620px;
 }
 
-/* line 60, ../scss/main.scss */
+/* line 88, ../scss/main.scss */
 .taster-info {
   display: -webkit-box;
   display: -moz-box;
@@ -3023,21 +3050,21 @@ th {
   margin: 15px 20px;
 }
 
-/* line 67, ../scss/main.scss */
+/* line 95, ../scss/main.scss */
 .taster-names {
   color: #515151;
 }
-/* line 70, ../scss/main.scss */
+/* line 98, ../scss/main.scss */
 .taster-names h2 {
   font-weight: normal;
   margin: 0 0 5px;
 }
-/* line 75, ../scss/main.scss */
+/* line 103, ../scss/main.scss */
 .taster-names p {
   margin: 0;
 }
 
-/* line 80, ../scss/main.scss */
+/* line 108, ../scss/main.scss */
 .taster-stats {
   display: -webkit-box;
   display: -moz-box;
@@ -3052,29 +3079,29 @@ th {
   align-items: center;
   color: #cfcfcf;
 }
-/* line 85, ../scss/main.scss */
+/* line 113, ../scss/main.scss */
 .taster-stats i {
   margin-left: 15px;
   margin-right: 5px;
 }
 
-/* line 91, ../scss/main.scss */
+/* line 119, ../scss/main.scss */
 .taster-video-player {
   position: relative;
   cursor: pointer;
 }
-/* line 99, ../scss/main.scss */
+/* line 127, ../scss/main.scss */
 .taster-video-player:hover .taster-video-control {
   display: inherit;
 }
-/* line 103, ../scss/main.scss */
+/* line 131, ../scss/main.scss */
 .taster-video-player:active .taster-video-control {
   font-size: 4em;
   margin-top: -32px;
   margin-left: -27.5px;
 }
 
-/* line 110, ../scss/main.scss */
+/* line 138, ../scss/main.scss */
 .taster-video-control {
   display: none;
   position: absolute;
@@ -3086,7 +3113,7 @@ th {
   color: white;
 }
 
-/* line 121, ../scss/main.scss */
+/* line 149, ../scss/main.scss */
 .taster-video {
   border-top-left-radius: .4em;
   border-top-right-radius: .4em;
@@ -3094,13 +3121,13 @@ th {
   height: 360px;
 }
 
-/* line 128, ../scss/main.scss */
+/* line 156, ../scss/main.scss */
 .rate {
   margin-top: 25px;
   position: relative;
 }
 
-/* line 133, ../scss/main.scss */
+/* line 161, ../scss/main.scss */
 .rate-button-bg {
   background-color: #f1f1f1;
   border-top: 1px inset rgba(255, 255, 255, 0.13);
@@ -3110,7 +3137,7 @@ th {
   position: absolute;
 }
 
-/* line 142, ../scss/main.scss */
+/* line 170, ../scss/main.scss */
 .rate-button {
   -webkit-transition: background-color 100ms;
   -moz-transition: background-color 100ms;
@@ -3124,23 +3151,23 @@ th {
   text-align: center;
   width: 108px;
 }
-/* line 152, ../scss/main.scss */
+/* line 180, ../scss/main.scss */
 .rate-button:hover {
   background-color: #fafafa;
 }
-/* line 156, ../scss/main.scss */
+/* line 184, ../scss/main.scss */
 .rate-button:active {
   background-color: whitesmoke;
 }
 
-/* line 161, ../scss/main.scss */
+/* line 189, ../scss/main.scss */
 .rate-nope {
   color: #ff7258;
   right: 50%;
   margin-right: 20px;
 }
 
-/* line 167, ../scss/main.scss */
+/* line 195, ../scss/main.scss */
 .rate-like {
   color: #63de9a;
   left: 50%;

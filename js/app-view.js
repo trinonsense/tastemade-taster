@@ -12,7 +12,8 @@ define([
 		el: '.app-content',
 
 		events: {
-			'click .taster-video-player' : 'playPause'
+			'click .taster-video-player' : 'playPause',
+			'click .rate-button' : 'rate'
 		},
 
 		initialize: function() {
@@ -37,11 +38,16 @@ define([
 			this.$('.taster-video-player').toggleClass('is-paused');
 		},
 
-		render: function(tasters) {
-			var content, tastersHTML = '';
+		rate: function() {
+			this.$('.taster').first().remove();
+		},
 
-			for (var i = 0; i < 3; i++) {
-				tastersHTML += this.templates.taster(tasters.at(i).toJSON());
+		render: function(tasters) {
+			var content, tastersHTML = '',
+				tastersJSON = tasters.toJSON();
+
+			for (var i = 0; i < tastersJSON.length; i++) {
+				tastersHTML += this.templates.taster(tastersJSON[i]);
 			}
 
 			content = this.layouts.rate({tasters: tastersHTML});
