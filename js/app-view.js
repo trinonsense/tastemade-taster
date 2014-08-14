@@ -61,6 +61,7 @@ define([
 				tastersJSON = tasters.toJSON();
 
 			for (var i = 0; i < tastersJSON.length; i++) {
+				tastersJSON[i].venue = tastersJSON[i].venue || {};
 				tastersHTML += this.templates.taster(tastersJSON[i]);
 			}
 
