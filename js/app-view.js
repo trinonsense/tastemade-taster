@@ -42,7 +42,7 @@ define([
 		rateTaster: function(e) {
 			if ($(e.currentTarget).hasClass('rate-like')) {
 				this.getCurrentTaster().addClass('taster-liked')
-					.find('.taster-like').css('opacity', 1).end();
+					.find('.taster-like').css('opacity', 1);
 
 			} else {
 				this.getCurrentTaster().addClass('taster-noped')

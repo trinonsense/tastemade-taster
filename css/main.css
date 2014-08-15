@@ -3059,11 +3059,11 @@ th {
 
 /* line 20, ../scss/_taster.scss */
 .taster {
-  -webkit-transition: width 200ms, margin 200ms, top 200ms, -webkit-transform 500ms ease, left 500ms ease, opacity 400ms ease;
+  -webkit-transition: width 200ms, margin 200ms, top 200ms, -webkit-transform 400ms ease, left 400ms ease, opacity 300ms ease;
   -webkit-transition-delay: 0s, 0s, 0s, 200ms, 200ms, 200ms;
-  -moz-transition: width 200ms, margin 200ms, top 200ms, -moz-transform 500ms ease 200ms, left 500ms ease 200ms, opacity 400ms ease 200ms;
-  -o-transition: width 200ms, margin 200ms, top 200ms, -o-transform 500ms ease 200ms, left 500ms ease 200ms, opacity 400ms ease 200ms;
-  transition: width 200ms, margin 200ms, top 200ms, transform 500ms ease 200ms, left 500ms ease 200ms, opacity 400ms ease 200ms;
+  -moz-transition: width 200ms, margin 200ms, top 200ms, -moz-transform 400ms ease 200ms, left 400ms ease 200ms, opacity 300ms ease 200ms;
+  -o-transition: width 200ms, margin 200ms, top 200ms, -o-transform 400ms ease 200ms, left 400ms ease 200ms, opacity 300ms ease 200ms;
+  transition: width 200ms, margin 200ms, top 200ms, transform 400ms ease 200ms, left 400ms ease 200ms, opacity 300ms ease 200ms;
   border: 1px solid #a5a5a5;
   border-radius: .5em;
   list-style: none;
@@ -3074,10 +3074,10 @@ th {
 }
 /* line 41, ../scss/_taster.scss */
 .taster .taster-video {
-  -webkit-transition: width 500ms;
-  -moz-transition: width 500ms;
-  -o-transition: width 500ms;
-  transition: width 500ms;
+  -webkit-transition: width 400ms;
+  -moz-transition: width 400ms;
+  -o-transition: width 400ms;
+  transition: width 400ms;
 }
 /* line 45, ../scss/_taster.scss */
 .taster:first-child {
