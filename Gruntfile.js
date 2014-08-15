@@ -10,9 +10,9 @@ module.exports = function(grunt) {
 					'scss/**/*.scss',
 					'js/**/*.js'
 				],
-				tasks: ['jshint', 'compass:dev'],
+				tasks: ['compass:dev'],
 				options: {
-					// livereload: true
+					livereload: true,
 					atBegin: true
 				}
 			}

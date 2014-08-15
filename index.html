@@ -3,17 +3,63 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body ontouchstart>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body ontouchstart>
+  <div class="app">
+    <header class="app-header">
+      <h1>Taster</h1>
+    </header>
+    <main class="app-content"></main>
+  </div>
 
-        <script data-main="js/require-config" src="bower_components/requirejs/require.js"></script>
-    </body>
+  <template id="rate-layout">
+    <ul class="tasters">
+      {{tasters}}
+    </ul>
+    <div class="rate">
+      <div class="rate-button-bg rate-nope">
+        <div class="rate-button">
+          <i class="fa fa-times fa-3x"></i>
+        </div>
+      </div>
+      <div class="rate-button-bg rate-like">
+        <div class="rate-button">
+          <i class="fa fa-heart fa-3x"></i>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="taster-template">
+    <li class="taster">
+      <div class="taster-video-player">
+        <video class="taster-video" src="{{video.url}}" poster="{{thumbnail.url}}" preload=none></video>
+        <i class="taster-video-control fa fa-5x fa-play-circle-o"></i>
+        <p class="taster-like">LIKE</p>
+        <p class="taster-nope">NOPE</p>
+      </div>
+      <div class="taster-info">
+        <header class="taster-names">
+          <h2>{{venue.name}}</h2>
+          <p>{{creator.name}}</p>
+        </header>
+        <div class="taster-stats">
+          <i class="fa fa-thumbs-o-up fa-2x"></i> {{stats.likers}}
+          <i class="fa fa-comment-o fa-2x"></i> {{stats.comments}}
+          <i class="fa fa-eye fa-2x"></i> {{stats.views}}
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script data-main="js/require-config" src="bower_components/requirejs/require.js"></script>
+</body>
 </html>
