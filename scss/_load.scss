@@ -1,0 +1,72 @@
+%loader-positioning {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -(125px/2);
+  margin-left: -(125px/2);
+}
+
+.loader {
+  position: relative;
+  height: 460px;
+
+  img {
+    @extend %loader-positioning;
+
+    z-index: 1;
+    border-radius: 4em;
+    border: 5px solid white;
+  }
+}
+
+%loader {
+  @extend %loader-positioning;
+
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: grow, fade;
+  border-radius: 50%;
+  background-color: rgb(255,230,226);
+  border: 2px solid rgb(253,190,180);
+}
+
+.loader-1 {
+  @extend %loader;
+
+  -webkit-animation-duration: 2s;
+}
+
+.loader-2 {
+  @extend %loader;
+
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 500ms;
+}
+
+@-webkit-keyframes grow {
+  from {
+    height: 135px;
+    width: 135px;
+  }
+
+  to {
+    $grow-size: 400px;
+    height: $grow-size;
+    width: $grow-size;
+    margin-top: -($grow-size/2);
+    margin-left: -($grow-size/2);
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

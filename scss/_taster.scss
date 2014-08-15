@@ -1,0 +1,196 @@
+.tasters {
+	margin: 10px 0 0;
+	padding: 0;
+	position: relative;
+	height: 477px;
+}
+
+.taster-bottom {
+	$width: 620px;
+
+	width: $width;
+	margin-left: -$width/2;
+	top: 20px;
+
+	.taster-video {
+		width: $width;
+	}
+}
+
+.taster {
+	@include transition(
+		// pull up next tasters
+		width 200ms,
+		margin 200ms,
+		top 200ms,
+
+		// taster rated
+		transform 400ms ease 200ms,
+		left 400ms ease 200ms,
+		opacity 300ms ease 200ms
+	);
+
+	border: 1px solid rgb(165, 165, 165);
+	border-radius: .5em;
+	list-style: none;
+	background-color: white;
+	box-shadow: 0px 1px 10px rgba(0,0,0,.2);
+	position: absolute;
+	left: 50%;
+
+	.taster-video {
+		@include transition(width 400ms);
+	}
+
+	&:first-child {
+		$width: 640px;
+
+		width: $width;
+		margin-left: -$width/2;
+		top: 0;
+		z-index: 3;
+
+		.taster-video {
+			width: $width;
+		}
+	}
+
+	&:nth-child(2) {
+		$width: 630px;
+
+		margin-left: -$width/2;
+		width: $width;
+		top: 10px;
+		z-index: 2;
+
+		.taster-video {
+			width: $width;
+		}
+	}
+
+	&:nth-child(3) {
+		@extend .taster-bottom;
+		z-index: 1;
+	}
+
+	&:nth-child(4) {
+		@extend .taster-bottom;
+	}
+
+	&:nth-child(n+5) {
+		display: none;
+	}
+}
+
+.taster-liked {
+	@include transform(rotate(90deg));
+	left: 150%;
+	opacity: 0;
+}
+
+.taster-noped {
+	@include transform(rotate(-90deg));
+	left: -50%;
+	opacity: 0;
+}
+
+.taster-info {
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
+	margin: 15px 20px
+}
+
+.taster-names {
+	color: rgb(81, 81, 81);
+
+	h2 {
+		font-weight: normal;
+		margin: 0 0 5px;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.taster-stats {
+	@include flexbox;
+	@include align-items(center);
+	color: rgb(207,207, 207);
+
+	i {
+		margin-left: 15px;
+		margin-right: 5px
+	}
+}
+
+.taster-video-player {
+	position: relative;
+	cursor: pointer;
+
+	&.is-paused .taster-video-control {
+		@extend .fa-pause;
+	}
+
+	&:hover .taster-video-control {
+		display: inherit;
+	}
+
+	&:active .taster-video-control {
+		font-size: 4em;
+		margin-top: -32px;
+		margin-left: -27.5px;
+	}
+}
+
+.taster-video-control {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -40px;
+	margin-left: -34px;
+	text-shadow: 1px 1px 2px rgba(0,0,0, .7);
+	color: white;
+}
+
+.taster-video {
+	border-top-left-radius: .4em;
+	border-top-right-radius: .4em;
+	width: 640px;
+	height: 360px;
+}
+
+%taster-rate {
+	@include transition(opacity 100ms);
+	position: absolute;
+	top: 37px;
+	font-weight: bold;
+	font-size: 4em;
+	border: 8px solid;
+	border-radius: .1em;
+	padding: 10px;
+	margin: 0;
+	opacity: 0;
+}
+
+.taster-like {
+	@extend %taster-rate;
+	$color: rgba(0, 164, 111, .9);
+
+	@include transform(rotate(-16deg));
+	left: 23px;
+	color: $color;
+	border-color: $color;
+}
+
+.taster-nope {
+	@extend %taster-rate;
+	$color: rgba(255, 99, 82, .9);
+
+	right: 23px;
+	@include transform(rotate(16deg));
+	color: $color;
+	border-color: $color;
+}

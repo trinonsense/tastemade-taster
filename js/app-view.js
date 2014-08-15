@@ -12,7 +12,7 @@ define([
 		el: '.app-content',
 
 		events: {
-			'click .taster-video-player' : 'playPause',
+			'click .taster-video-player' : 'toggleVideo',
 			'click .rate-button-bg' : 'rateTaster',
 			'transitionend .taster:first-child' : 'removeTaster'
 		},
@@ -27,7 +27,7 @@ define([
 			};
 		},
 
-		playPause: function() {
+		toggleVideo: function() {
 			var video = this.getCurrentTaster().find('.taster-video')[0];
 
 			if (video.paused) {
@@ -42,7 +42,7 @@ define([
 		rateTaster: function(e) {
 			if ($(e.currentTarget).hasClass('rate-like')) {
 				this.getCurrentTaster().addClass('taster-liked')
-					.find('.taster-like').css('opacity', 1).end();
+					.find('.taster-like').css('opacity', 1);
 
 			} else {
 				this.getCurrentTaster().addClass('taster-noped')
@@ -61,6 +61,7 @@ define([
 				tastersJSON = tasters.toJSON();
 
 			for (var i = 0; i < tastersJSON.length; i++) {
+				tastersJSON[i].venue = tastersJSON[i].venue || {};
 				tastersHTML += this.templates.taster(tastersJSON[i]);
 			}
 
