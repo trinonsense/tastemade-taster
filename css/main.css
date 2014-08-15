@@ -2964,7 +2964,81 @@ th {
   font-size: 3em;
 }
 
-/* line 20, ../scss/main.scss */
+/* line 1, ../scss/_load.scss */
+.loader img, .loader-1, .loader-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -62.5px;
+  margin-left: -62.5px;
+}
+
+/* line 9, ../scss/_load.scss */
+.loader {
+  position: relative;
+  height: 460px;
+}
+/* line 13, ../scss/_load.scss */
+.loader img {
+  z-index: 1;
+  border-radius: 4em;
+  border: 5px solid white;
+}
+
+/* line 22, ../scss/_load.scss */
+.loader-1, .loader-2 {
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: grow, fade;
+  border-radius: 50%;
+  background-color: #ffe6e2;
+  border: 2px solid #fdbeb4;
+}
+
+/* line 32, ../scss/_load.scss */
+.loader-1 {
+  -webkit-animation-duration: 2s;
+}
+
+/* line 38, ../scss/_load.scss */
+.loader-2 {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 500ms;
+}
+
+@-webkit-keyframes grow {
+  /* line 46, ../scss/_load.scss */
+  from {
+    height: 135px;
+    width: 135px;
+  }
+
+  /* line 51, ../scss/_load.scss */
+  to {
+    height: 400px;
+    width: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+  }
+}
+
+@-webkit-keyframes fade {
+  /* line 61, ../scss/_load.scss */
+  from {
+    opacity: 1;
+  }
+
+  /* line 65, ../scss/_load.scss */
+  50% {
+    opacity: 1;
+  }
+
+  /* line 69, ../scss/_load.scss */
+  to {
+    opacity: 0;
+  }
+}
+
+/* line 1, ../scss/_taster.scss */
 .tasters {
   margin: 10px 0 0;
   padding: 0;
@@ -2972,18 +3046,18 @@ th {
   height: 477px;
 }
 
-/* line 27, ../scss/main.scss */
+/* line 8, ../scss/_taster.scss */
 .taster-bottom, .taster:nth-child(3), .taster:nth-child(4) {
   width: 620px;
   margin-left: -310px;
   top: 20px;
 }
-/* line 34, ../scss/main.scss */
+/* line 15, ../scss/_taster.scss */
 .taster-bottom .taster-video, .taster:nth-child(3) .taster-video, .taster:nth-child(4) .taster-video {
   width: 620px;
 }
 
-/* line 39, ../scss/main.scss */
+/* line 20, ../scss/_taster.scss */
 .taster {
   -webkit-transition: width 200ms, margin 200ms, top 200ms, -webkit-transform 500ms ease, left 500ms ease, opacity 400ms ease;
   -webkit-transition-delay: 0s, 0s, 0s, 200ms, 200ms, 200ms;
@@ -2998,45 +3072,45 @@ th {
   position: absolute;
   left: 50%;
 }
-/* line 60, ../scss/main.scss */
+/* line 41, ../scss/_taster.scss */
 .taster .taster-video {
   -webkit-transition: width 500ms;
   -moz-transition: width 500ms;
   -o-transition: width 500ms;
   transition: width 500ms;
 }
-/* line 64, ../scss/main.scss */
+/* line 45, ../scss/_taster.scss */
 .taster:first-child {
   width: 640px;
   margin-left: -320px;
   top: 0;
   z-index: 3;
 }
-/* line 72, ../scss/main.scss */
+/* line 53, ../scss/_taster.scss */
 .taster:first-child .taster-video {
   width: 640px;
 }
-/* line 77, ../scss/main.scss */
+/* line 58, ../scss/_taster.scss */
 .taster:nth-child(2) {
   margin-left: -315px;
   width: 630px;
   top: 10px;
   z-index: 2;
 }
-/* line 85, ../scss/main.scss */
+/* line 66, ../scss/_taster.scss */
 .taster:nth-child(2) .taster-video {
   width: 630px;
 }
-/* line 90, ../scss/main.scss */
+/* line 71, ../scss/_taster.scss */
 .taster:nth-child(3) {
   z-index: 1;
 }
-/* line 99, ../scss/main.scss */
+/* line 80, ../scss/_taster.scss */
 .taster:nth-child(n+5) {
   display: none;
 }
 
-/* line 104, ../scss/main.scss */
+/* line 85, ../scss/_taster.scss */
 .taster-liked {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -3047,7 +3121,7 @@ th {
   opacity: 0;
 }
 
-/* line 110, ../scss/main.scss */
+/* line 91, ../scss/_taster.scss */
 .taster-noped {
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -3058,7 +3132,7 @@ th {
   opacity: 0;
 }
 
-/* line 116, ../scss/main.scss */
+/* line 97, ../scss/_taster.scss */
 .taster-info {
   display: -webkit-box;
   display: -moz-box;
@@ -3079,21 +3153,21 @@ th {
   margin: 15px 20px;
 }
 
-/* line 123, ../scss/main.scss */
+/* line 104, ../scss/_taster.scss */
 .taster-names {
   color: #515151;
 }
-/* line 126, ../scss/main.scss */
+/* line 107, ../scss/_taster.scss */
 .taster-names h2 {
   font-weight: normal;
   margin: 0 0 5px;
 }
-/* line 131, ../scss/main.scss */
+/* line 112, ../scss/_taster.scss */
 .taster-names p {
   margin: 0;
 }
 
-/* line 136, ../scss/main.scss */
+/* line 117, ../scss/_taster.scss */
 .taster-stats {
   display: -webkit-box;
   display: -moz-box;
@@ -3108,29 +3182,29 @@ th {
   align-items: center;
   color: #cfcfcf;
 }
-/* line 141, ../scss/main.scss */
+/* line 122, ../scss/_taster.scss */
 .taster-stats i {
   margin-left: 15px;
   margin-right: 5px;
 }
 
-/* line 147, ../scss/main.scss */
+/* line 128, ../scss/_taster.scss */
 .taster-video-player {
   position: relative;
   cursor: pointer;
 }
-/* line 155, ../scss/main.scss */
+/* line 136, ../scss/_taster.scss */
 .taster-video-player:hover .taster-video-control {
   display: inherit;
 }
-/* line 159, ../scss/main.scss */
+/* line 140, ../scss/_taster.scss */
 .taster-video-player:active .taster-video-control {
   font-size: 4em;
   margin-top: -32px;
   margin-left: -27.5px;
 }
 
-/* line 166, ../scss/main.scss */
+/* line 147, ../scss/_taster.scss */
 .taster-video-control {
   display: none;
   position: absolute;
@@ -3142,7 +3216,7 @@ th {
   color: white;
 }
 
-/* line 177, ../scss/main.scss */
+/* line 158, ../scss/_taster.scss */
 .taster-video {
   border-top-left-radius: .4em;
   border-top-right-radius: .4em;
@@ -3150,7 +3224,7 @@ th {
   height: 360px;
 }
 
-/* line 184, ../scss/main.scss */
+/* line 165, ../scss/_taster.scss */
 .taster-like, .taster-nope {
   -webkit-transition: opacity 100ms;
   -moz-transition: opacity 100ms;
@@ -3167,7 +3241,7 @@ th {
   opacity: 0;
 }
 
-/* line 197, ../scss/main.scss */
+/* line 178, ../scss/_taster.scss */
 .taster-like {
   -webkit-transform: rotate(-16deg);
   -moz-transform: rotate(-16deg);
@@ -3179,7 +3253,7 @@ th {
   border-color: rgba(0, 164, 111, 0.9);
 }
 
-/* line 207, ../scss/main.scss */
+/* line 188, ../scss/_taster.scss */
 .taster-nope {
   right: 23px;
   -webkit-transform: rotate(16deg);
@@ -3191,13 +3265,13 @@ th {
   border-color: rgba(255, 99, 82, 0.9);
 }
 
-/* line 217, ../scss/main.scss */
+/* line 1, ../scss/_rate.scss */
 .rate {
   margin-top: 25px;
   position: relative;
 }
 
-/* line 222, ../scss/main.scss */
+/* line 6, ../scss/_rate.scss */
 .rate-button-bg {
   background-color: #f1f1f1;
   border-top: 1px inset rgba(255, 255, 255, 0.13);
@@ -3207,7 +3281,7 @@ th {
   position: absolute;
 }
 
-/* line 231, ../scss/main.scss */
+/* line 15, ../scss/_rate.scss */
 .rate-button {
   -webkit-transition: background-color 100ms;
   -moz-transition: background-color 100ms;
@@ -3221,23 +3295,23 @@ th {
   text-align: center;
   width: 108px;
 }
-/* line 241, ../scss/main.scss */
+/* line 25, ../scss/_rate.scss */
 .rate-button:hover {
   background-color: #fafafa;
 }
-/* line 245, ../scss/main.scss */
+/* line 29, ../scss/_rate.scss */
 .rate-button:active {
   background-color: whitesmoke;
 }
 
-/* line 250, ../scss/main.scss */
+/* line 34, ../scss/_rate.scss */
 .rate-nope {
   color: #ff7258;
   right: 50%;
   margin-right: 20px;
 }
 
-/* line 256, ../scss/main.scss */
+/* line 40, ../scss/_rate.scss */
 .rate-like {
   color: #63de9a;
   left: 50%;

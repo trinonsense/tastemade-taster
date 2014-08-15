@@ -1,0 +1,44 @@
+.rate {
+	margin-top: 25px;
+	position: relative;
+}
+
+.rate-button-bg {
+	background-color: rgb(241, 241, 241);
+	border-top: 1px inset rgba(255, 255, 255, 0.13);
+	cursor: pointer;
+	border-radius: 5em;
+	padding: 15px;
+	position: absolute;
+}
+
+.rate-button {
+	@include transition(background-color 100ms);
+	background-color: white;
+	border-radius: 4em;
+	padding: 30px;
+	border-bottom: 1px solid rgb(214, 214, 214);
+	box-sizing: border-box;
+	text-align: center;
+	width: 108px;
+
+	&:hover {
+		background-color: darken(#fff, 2%);
+	}
+
+	&:active {
+		background-color: darken(#fff, 4%);
+	}
+}
+
+.rate-nope {
+	color: rgb(255, 114, 88);
+	right: 50%;
+	margin-right: 20px;
+}
+
+.rate-like {
+	color: rgb(99, 222, 154);
+	left: 50%;
+	margin-left: 20px;
+}
